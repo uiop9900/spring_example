@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 	
-	@ResponseBody
+	
 	@RequestMapping("/test1") //test1로 들어오면 여기로 들어온다.
-	public String test1() {
+	public @ResponseBody String test1() {
 		return "hello world!!!";
 	}
 	
