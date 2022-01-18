@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 테이블 단위/ 한 테이블에 하나의 Mapper, 그 하나의 파일에서 select update 다 한다. -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- 항상 복사해서 쓰기, 아래는 MyBatis문법 쓰면 된다. -->
+ 
+ <mapper namespace="com.example.lesson02.dao.UsedGoodsDAO"> <!-- 항상 ctrl 눌러서 들어가보기 -->
+ 	<select id="selectUsedGoodsList" resultType="com.example.lesson02.model.UsedGoods"> 
+ 	<!-- id는 DAO의 메소드명과 동일하게 Mapping한다. / resultType: 한 행에 대한 type이 뭐냐? List에서 한 index의 type ==> usedGoods 그 자체임, 어느 파일에 어느 type인지 알려주기 -->
+ 		SELECT
+ 			*
+ 		FROM 	
+ 			`used_goods`
+ 	</select>
+ 	
+ </mapper>
+ 
+ 
+ 
+ 
