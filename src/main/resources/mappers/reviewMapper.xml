@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.example.lesson03.dao.ReviewDAO">
+	<select id="selectReview" 
+	parameterType="int" 
+	resultType="com.example.lesson03.model.Review"> <!-- 결과값에 대한 type의 경로 -->
+		SELECT 		<!-- *표시로 가지고 오지 않는다. -->
+			`id`
+			, `storeId` 
+			, `menu` 
+			, `userName` 
+			, `point` 
+			, `review` 
+			, `createdAt` 
+			, `updatedAt` 
+		FROM 
+			`new_review`
+		WHERE
+			`id` =  #{id}
+	</select>
+</mapper>
+
