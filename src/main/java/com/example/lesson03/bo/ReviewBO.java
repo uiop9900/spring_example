@@ -15,4 +15,9 @@ public class ReviewBO {
 	public Review getReview(int id) {
 		return reviewDAO.selectReview(id); //dao에 전달
 	}
+	
+	
+	public int addReview(Review review) {//insert는 값을 넣고 끝이기에 void로 해도 되지만, int로 하면 몇 행이 insert가 되었는지 알수있다.
+		return reviewDAO.insertReview(review);
+	}
 }

@@ -20,5 +20,29 @@
 		WHERE
 			`id` =  #{id}
 	</select>
+	
+	<insert id="insertReview" parameterType="com.example.lesson03.model.Review"> <!-- insert만하지 결과값을 돌려주지 않는다. select만 resultType이 있음 --> 
+		INSERT INTO `new_review`
+		(	
+			 `storeId` 
+			, `menu` 
+			, `userName` 
+			, `point` 
+			, `review` 
+			, `createdAt` 
+			, `updatedAt` 
+		)
+		VALUES
+		(
+			#{storeId}
+			, #{menu}
+			, #{userName}
+			, #{point}
+			, #{review}
+			, NOW()
+			, NOW()
+		)
+		
+	</insert><!-- createAt, updatedAt 안 넣어줘도 되지만 관례적으로 다 넣어준다. -->
 </mapper>
 
