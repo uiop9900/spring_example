@@ -44,5 +44,48 @@
 		)
 		
 	</insert><!-- createAt, updatedAt 안 넣어줘도 되지만 관례적으로 다 넣어준다. -->
+
+	<insert id="insertReviewAsField" parameterType="map"><!-- 위아래는 합칠수없음, parameterType이 다름! -->
+		INSERT INTO `new_review`
+		(	
+			 `storeId` 
+			, `menu` 
+			, `userName` 
+			, `point` 
+			, `review` 
+			, `createdAt` 
+			, `updatedAt` 
+		)
+		VALUES
+		(
+			#{storeId}
+			, #{menu}
+			, #{userName}
+			, #{point}
+			, #{review}
+			, NOW()
+			, NOW()
+		)
+	</insert>
+	
+	<update id="updateReviewById" parameterType="map">
+		UPDATE `new_review`
+		SET
+			`review` = #{review}
+			, `updatedAt` = NOW()
+		WHERE
+			`id` = #{id}
+	</update>
+	
+	<delete id="deleteReviewById" parameterType="int"> <!-- 하나면 parameterType 생략가능 -->
+		DELETE 
+		FROM
+			`new_review`
+		WHERE
+			`id` = #{id}
+	</delete>
+
 </mapper>
+
+
 

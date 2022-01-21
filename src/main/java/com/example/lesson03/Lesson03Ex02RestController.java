@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.lesson03.bo.ReviewBO;
 import com.example.lesson03.model.Review;
 
-@RequestMapping("/lesson03/quiz02")
+@RequestMapping("/lesson03/ex02")
 @RestController
 public class Lesson03Ex02RestController {
 	
@@ -27,7 +27,14 @@ public class Lesson03Ex02RestController {
  		int rowCount = reviewBO.addReview(review); // insert된 row 수를 리턴받는다.
  		
 		return "success row count: " + rowCount;
-		
+	}
+	
+	//객체하나가 아니라 컬럼따로따로 넘기기
+	//http://localhost/lesson03/ex02/2
+	@RequestMapping("/2")
+	public String ex02_2() {
+		int rowCount = reviewBO.addReviewAsField(4, "콤비네이션R", "uiop9900", 5.0, "역시 맛있다!!");
+		return "success row count: " + rowCount;
 	}
 	
 }
