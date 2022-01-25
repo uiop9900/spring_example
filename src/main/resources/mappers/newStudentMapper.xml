@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.example.lesson04.dao.StudentDAO">
+ 	<insert id="insertStudent" parameterType="com.example.lesson04.model.Student"
+ 	useGeneratedKeys="true" keyProperty="id"><!-- id값을 알려주는 마이바티스의 기능, insert가 되고 그 직후에 id가 어떤값으로 들어가는 지 알수있다. 키사용할거냐? 키 이름은? -->
+ 		INSERT INTO `new_student`
+ 		(
+			`name`
+			, `phoneNumber`
+			, `email`
+			, `dreamjob`
+			, `createdAt`
+			, `updatedAt`
+ 		)
+ 		VALUES
+ 		(
+ 			#{name}
+ 			, #{phoneNumber}
+ 			, #{email}
+ 			, #{dreamjob}
+ 			, NOW()
+ 			, NOW()
+ 		)
+ 	</insert>
+ 
+ 	<select id="selectStudentById" parameterType="int" resultType="com.example.lesson04.model.Student">
+ 		SELECT 
+ 			`id`
+ 			, `name`
+			, `phoneNumber`
+			, `email`
+			, `dreamjob`
+			, `createdAt`
+			, `updatedAt`
+		FROM 
+			`new_student`
+		WHERE
+			`id` = #{id}
+ 	</select>
+ </mapper>
