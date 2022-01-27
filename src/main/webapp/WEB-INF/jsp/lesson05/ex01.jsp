@@ -55,15 +55,9 @@
 		number1은 비어있지 않다.<br>
 	</c:if>
 	
-		<c:if test="${!empty number1}"> <%--느낌표 부정가능. --%>
+	<c:if test="${!empty number1}"> <%--느낌표 부정가능. --%>
 		number1은 비어있지 않다.<br>
 	</c:if>
-	
-	
-	
-	
-	
-	
 	
 </body>
 </html>
