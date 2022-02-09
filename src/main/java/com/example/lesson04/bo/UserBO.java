@@ -19,4 +19,10 @@ public class UserBO {
 	public User getLastUser() { //마지막 하나 가져오는거라 파라미터 필요없음
 		return userDAO.selectLastUser();
 	}
+	
+	public boolean existUserByName(String name) {
+		return userDAO.existUserByName(name);
+	}
+	
+	
 }

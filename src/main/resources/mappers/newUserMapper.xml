@@ -41,4 +41,13 @@
  		LIMIT
  			1
  	</select>
+ 	
+ 	<select id="existUserByName" parameterType="string" resultType="boolean"> <!-- 0:거짓, 0이 아닌수: 참 -->
+ 		SELECT 
+ 			count(1) <!-- 0이 나오면 중복 없음 -> 거짓(false) -->
+		FROM	
+ 			`new_user`
+ 		WHERE
+ 			`name` = #{name}
+ 	</select>
  </mapper>
