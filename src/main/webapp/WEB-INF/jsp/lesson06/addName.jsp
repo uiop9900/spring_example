@@ -52,7 +52,7 @@ $(document).ready(function(e){ //무조건 console확인하면서 하기
 			, success: function(data) {
 				//alert(data.is_duplication) //true
 				if (data.is_duplication == true) {
-				$("#nameStatusArea").append('<span class="text-danger">중복된 이름입니다.</span>'); //서버를 거친 후에 response를 받아서 그에 따른 동적, 화면은 머무르면서 일부분만 다르게 한다.
+					$("#nameStatusArea").append('<span class="text-danger">중복된 이름입니다.</span>'); //서버를 거친 후에 response를 받아서 그에 따른 동적, 화면은 머무르면서 일부분만 다르게 한다.
 				}
 			}
 			, error: function(e) {
@@ -65,7 +65,7 @@ $(document).ready(function(e){ //무조건 console확인하면서 하기
 			e.preventDefault(); //기본동작 멈춤
 			
 			//nameStatusArea 태그 안에 누가 있는지 
-			if ($('nameStatusArea').children().length > 0) { // 안의 자식이 몇개 인지 나온다.
+			if ($("#nameStatusArea").children().length > 0) { // 안의 자식이 몇개 인지 나온다.
 				alert("서브밋 불가");
 			} else {
 				alert("서브밋 가능");
